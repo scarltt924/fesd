@@ -1,0 +1,404 @@
+// 初始化
+@import ./base/_reset
+// 函式
+@import ./base/_mixin
+// FESD
+@import ../js/fesd2022/ripple4/_ripple4
+
+body
+  margin: 0
+  overflow-x: hidden
+  main
+    padding-bottom: 200px
+  &::-webkit-scrollbar 
+    display: none
+
+.square-btn
+  width: 200px
+  height: 50px
+  // border: 2px solid #c75539
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: #c75539
+  color: #fff
+  border-radius: 10rem
+  padding: 14px 30px
+  margin-left: 15px
+  white-space: nowrap
+  flex-shrink: 0
+  cursor: pointer
+  +rwdmax(575)
+    width: 35px
+    height: 35px
+    padding: 0
+    border-radius: 50%
+    margin-left: 25px
+  &::before
+    display: none
+    color: #fff
+    font-size: px(12)
+    +rwdmax(575)
+      display: block
+  &::after
+    content: attr(data-text)
+    color: #fff
+    font-size: px(12)
+    +rwdmax(575)
+      display: none
+
+nav.navbar
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100vw
+  height: 60px
+  background-color: #000
+  color: #fff
+  .container
+    display: flex
+    align-items: center
+    width: 90%
+    height: 100%
+    .logo
+      > p
+        font-size: 30px
+    .menu
+      display: flex
+      align-items: center
+      margin-left: auto
+      li
+        a
+          padding: 0 10px
+          color: #fff
+
+section
+  width: 80%
+  margin: 30px auto
+  h2
+    position: relative
+    padding-left: 10px
+    &::before
+      content: ''
+      width: 5px
+      height: 100%
+      background-color: #c75539
+      position: absolute
+      left: -5px
+
+.section1
+  button
+    margin: 20px 0 0 0
+    // box-shadow: 0 10px 10px 10px rgba(#000, .15)
+    // overflow: hidden
+  ripple-btn
+    &.circle
+      border: none
+      width: 100px
+      height: 100px
+      border-radius: 100px
+
+.section2
+  .welcome-wrap 
+    max-width: calc(1000px + 100px)
+    width: 100%
+    display: flex
+    flex-direction: row-reverse
+    align-items: center
+    border-radius: 10px
+    padding: 30px 30px
+    background-color: #1f1f1f
+    margin: 20px 0 0 0
+    +rwdmax(575)
+      flex-direction: column
+    .photo 
+      width: 80px
+      height: 80px
+      border-radius: 50%
+      background-color: #fff
+      overflow: hidden
+      flex-shrink: 0
+      &.uploaded
+        background-color: transparent
+        .preview
+          &::before
+            +rwdmax(575)
+              opacity: 0
+          svg
+            display: none
+      .preview 
+        position: relative
+        width: 100%
+        height: 100%
+        z-index: 1
+        &::before 
+          content: '更換大頭貼'
+          position: absolute
+          top: 0
+          right: 0
+          bottom: 0
+          font-size: px(12)
+          left: 0
+          display: flex
+          justify-content: center
+          align-items: center
+          width: 100%
+          height: 100%
+          opacity: 0
+          color: #fff
+          background-color: rgba(0, 0, 0, 0.6)
+          transition: opacity 0.3s
+          +rwdmax(575)
+            opacity: 1
+        svg
+          display: block
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+          width: 50%
+          height: 50%
+          z-index: -1
+      +hover
+        .preview
+          &::before
+            opacity: 1
+    .text 
+      width: 100%
+      padding-left: 50px
+      color: #fff
+      +rwdmax(575)
+        padding-left: 0
+        margin-top: 20px
+        text-align: center
+      h3
+        font-size: px(40)
+      p 
+        font-size: px(24)
+
+.section3
+  .category-slider
+    max-width: 1200px
+    width: 100%
+    margin: 20px auto 0
+    .wrapper
+      flex-wrap: wrap
+      +rwdmax(1200)
+        flex-wrap: nowrap
+    .category
+      display: block
+      padding: 10px 30px
+
+.section4
+  position: relative
+  z-index: 999
+  .dropdown-group
+    margin: 20px 0 0 0
+
+  .dropdown-wrap
+    margin: 10px 0 0 0
+    display: flex
+    gap: 10px
+    dropdown-el
+      max-width: 400px
+      width: 100%
+    +rwdmax(1200)
+      flex-direction: column
+
+.section5
+  .video-section
+    display: flex
+    margin: 20px auto
+    +rwdmax(1200)
+      flex-direction: column
+  .photo-box
+    width: 30%
+    +rwdmax(1200)
+      width: 100%
+
+// 燈箱
+.ajaxMe
+  padding: 10px
+  .box
+    width: calc(100% - 40px)
+    height: 300px
+    background-color: #8f2929
+    margin: 10px auto
+    color: #fff
+    display: flex
+    justify-content: center
+    align-items: center
+  .nav-bar
+    width: 100%
+    position: sticky
+    top: 0
+    left: 0
+    z-index: 99
+    height: 100px
+    background-color: #d8b774
+    margin: 0
+  .close-button
+    width: 60px
+    height: 30px
+    background-color: #ffffff
+    margin: 0 auto
+    position: absolute
+    display: flex
+    justify-content: center
+    align-items: center
+    right: 0
+    border-radius: 0 0 0 10px
+    cursor: pointer
+    transition: background-color .4s ease color .4s ease
+    +hover 
+      color: #8f2929
+
+section.section7
+  width: 100%
+  position: relative
+  .eye 
+    position: relative
+    display: inline-block
+    border-radius: 50%
+    height: 35px
+    width: 35px
+    background: red
+    position: absolute
+    bottom: 20px
+    right: 10px
+
+  .eye:after 
+    background-image: url(http://www.i2clipart.com/cliparts/1/1/4/b/128135114b88dbc40dda34cfdbc895d0a86fe6.png)
+    background-repeat:no-repeat
+    background-size: contain
+    width: 17px
+    height: 10px
+    content: ""
+    filter: sepia(1) brightness(0.65)
+
+
+  // .eye
+  //   width: 50px
+  //   height: 50px
+  //   background: #000
+  //   border: 25px solid steelblue
+  //   position: absolute
+  //   border-radius: 50%
+  //   top: 50%
+  //   left: 50%
+  //   transform: translate(-50%, -50%)
+  //   -webkit-transition: border .3s ease-out, width .3s ease-out, height .3s ease-out
+  //   -moz-transition: border .3s ease-out, width .3s ease-out, height .3s ease-out
+  //   -o-transition: border .3s ease-out, width .3s ease-out, height .3s ease-out
+  //   transition: border .3s ease-out, width .3s ease-out, height .3s ease-out
+
+  // .container:hover .eye
+  //   border: 10px solid steelblue
+  //   width: 80px
+  //   height: 80px
+  //   -webkit-transition: border .3s ease-out, width .3s ease-out, height .3s ease-out
+  //   -moz-transition: border .3s ease-out, width .3s ease-out, height .3s ease-out
+  //   -o-transition: border .3s ease-out, width .3s ease-out, height .3s ease-out
+  //   transition: border .3s ease-out, width .3s ease-out, height .3s ease-out
+
+  // .lid
+  //   height: 50%
+  //   width: 100%
+  //   position: absolute
+  //   background: #000
+
+  // .lid-top
+  //   top: -50%
+
+  // .lid-bottom 
+  //   bottom: -50%
+
+  // .lid-go-down 
+  //   animation: lid-go-down .1s 2 alternate
+
+  // .lid-go-up 
+  //   animation: lid-go-up .1s 2 alternate
+
+  // @keyframes lid-go-down 
+  //   0%
+  //     top: -50%
+  //   100%
+  //     top: 0
+
+  // @keyframes lid-go-up 
+  //   0% 
+  //     bottom: -50%
+  //   100% 
+  //     bottom: 0
+
+  // .container
+  //   cursor: pointer
+  //   width: 160px
+  //   height: 200px
+  //   position: absolute
+  //   top: 50%
+  //   left: 50%
+  //   transform: translate(-50%, -50%)
+  //   border: 30px solid #000
+  //   border-top: 15px solid #000
+  //   border-bottom: 15px solid #000
+  //   border-radius: 50%
+  //   overflow: hidden
+
+section.section8 
+  // position: relative
+  .man 
+    display: block
+    width: 500px
+    height: 500px
+    // position: relative
+    margin: auto
+    background-color: pink
+  .eye
+    border-radius: 50%
+    display: block
+    position: absolute
+    width: 50px
+    height: 50px
+    background-color: #fff
+    top: 50px
+    left: 50px
+    // overflow: hidden
+    // transform: translate3d(-50% ,-50% ,0)
+  .pupil
+    width: 10px
+    height: 10px
+    background-color: #000
+    border-radius: 50%
+    top: 0
+    left: 0
+    z-index: 9999
+    display: block
+    position: absolute
+    transition: top .4s .4s cubic-bezier(.22,.68,0,1.71) left .4s .4s cubic-bezier(.22,.68,0,1.71)
+  .word
+    font-size: px(50)
+    display: block
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate3d(-50%, -50%, 0)
+    &.two
+      // font-size: px(60)
+      color: #fff
+
+.pop
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  background-color: #00000067
+  position: absolute
+  top: 0
+  left: 0
+  display: block
+  z-index: 99999
+  pointer-events: none
+  transition: width .4s ease height .4s ease
+  &.hover
+    width: 0
+    height: 0

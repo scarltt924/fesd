@@ -1,0 +1,38 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel="stylesheet", href=`./css/index.css`)
+  body 
+    nav.navbar
+      .container
+        a.logo(href="./index.html")
+          p ㋡
+
+    main
+      .pop
+      section.section1
+        h2 ripple4 + follow4
+        ripple-btn.square-btn(r4-color="#fff" r4-duration="600" r4-hover="true" style='margin-top: 10px') 游標滑進來偶這
+        ripple-btn.square-btn(r4-color="#fff" r4-duration="600" style='background-color: #000;margin-top: 10px') 點我
+        ripple-btn.circle(r4-color="#7a1b1b" r4-duration="2000") 點我
+
+      section.section7 
+        .eye 
+      
+      section.section8 
+        .man 
+          .eye
+            .pupil(data-speed="-10")
+          .word.two(data-speed="-5.5") YOOOOOOOOOO
+          .word.one(data-speed="1") YOOOOOOOOOO
+
+    // 共用 JS
+    script(defer src="./js/jquery-3.6.0.min.js")
+    // 個別頁面引用 JS
+    script(defer src="./js/fesdDB.js")
+    script(defer src="./js/global.min.js")
+    script(defer src="./js/pages/index.min.js")
