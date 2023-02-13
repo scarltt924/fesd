@@ -65,6 +65,8 @@ export default class Follow4 {
       center: OPTIONS.SETTINGS.center,
       reverse: OPTIONS.SETTINGS.reverse,
     }
+    this.s.options = options;
+    
     this.#event();
   }
   #event(el) {
